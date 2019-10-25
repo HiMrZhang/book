@@ -15,7 +15,7 @@ Zookeeper 是通过 Zab （Zookeeper Atomic Broadcast）协议来保证分布式
 
 * **广播模式**
 
-广播模式类似一个简单的两阶段提交：Leader发起一个请求，收集选票，并且最终提交。两段提交要求协调者必须等到所有的参与者全部反馈ACK确认消息后，再发送commit消息。而Zab协议中 Leader 只要半数以上的Follower成功反馈ACK确认即可，不需要收到全部Follower反馈ACK确认。
+广播模式类似一个简单的两阶段提交：Leader发起一个请求，收集选票，并且最终提交。两段提交要求协调者必须等到所有的参与者全部反馈ACK确认消息后，再发送commit消息。而Zab协议中 Leader 只要半数以上的Follower成功反馈ACK确认即可，不需要收到全部Follower反馈ACK确认。![](/assets/zookeeper-2.png)
 
 （1）客户端向leader节点发起写请求操作**（写操作必须通过leader节点完成）**。
 
