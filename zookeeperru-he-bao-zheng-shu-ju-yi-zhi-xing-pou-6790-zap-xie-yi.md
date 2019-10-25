@@ -46,7 +46,9 @@ Leader 服务器出现崩溃或者由于网络原因导致 Leader 服务器失�
 
 如上图所示，Server1是一个Leader，我们用Leader1表示，Server2和Server3为Follower。首先Leader发起了两个Proposal，P1和P2，并将P1、P2发送给了Server1和Server2。然后Leader对P1发起了Commit即C1，之后又发起了一个Proposal即P3，再后来又对P2发起了commit即C2，就在此时我们的Leader挂了。那么这时候，C1、P3和C2这两个消息只有Leader自己收到了。
 
-![](/assets/3.png)Server1挂掉以后，Server3被选举为Leader，用Leader3表示。在接收请求之前，Leader3首先检查事物日志中是否存在未提交、且在超过半数的节点中存在的消息P1、P2，并依次发出C1、C2分别将P1、P2提交，之后Leader3才可发出了新的提议P10000001和C10000001。
+![](/assets/3.png)如上图所示Server1挂掉以后，Server3被选举为Leader，用Leader3表示。在接收请求之前，Leader3首先检查事物日志中是否存在未提交、且在超过半数的节点中存在的消息P1、P2，并依次发出C1、C2分别将P1、P2提交，之后Leader3才可发出了新的提议P10000001和C10000001。
+
+![](/assets/4.png)
 
 
 
