@@ -48,7 +48,5 @@ Leader 服务器出现崩溃或者由于网络原因导致 Leader 服务器失�
 
 ![](/assets/3.png)如上图所示Server1挂掉以后，Server3被选举为Leader，用Leader3表示。在接收请求之前，Leader3首先检查事物日志中是否存在未提交、且在超过半数的节点中存在的消息P1、P2，并依次发出C1、C2分别将P1、P2提交，之后Leader3才可发出了新的提议P10000001和C10000001。
 
-![](/assets/4.png)
-
-
+![](/assets/4.png)如上图所示server1恢复后以 Follower 角色连上 Leader3 服务器后，Leader3 服务器会根据自己服务器上最后提交的 Proposal 来和 server1 服务器的 Proposal 进行比对， Leader3 要求 server1 进行一个回退操作，回退到一个确实已经被集群中过半机器 Commit 的最新 Proposal P2。
 
