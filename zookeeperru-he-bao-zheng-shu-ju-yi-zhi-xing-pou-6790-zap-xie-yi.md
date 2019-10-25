@@ -11,9 +11,13 @@ ZooKeeper服务有两种不同的运行模式。一种是**"独立模式"**\(sta
 
 ### **数据一致性保障机制-ZAP协议**
 
-Zookeeper 是通过 Zab （Zookeeper Atomic Broadcast）协议来保证分布式事务的最终一致性。
+Zookeeper 是通过 Zab （Zookeeper Atomic Broadcast）协议来保证分布式事务的最终一致性。Zab协议有两种模式，它们分别是恢复模式和广播模式。
 
+* **广播模式**
 
+广播模式类似一个简单的两阶段提交：Leader发起一个请求，收集选票，并且最终提交。两段提交要求协调者必须等到所有的参与者全部反馈ACK确认消息后，再发送commit消息。而Zab协议中 Leader 只要半数以上的Follower成功反馈ACK确认即可，不需要收到全部Follower反馈ACK确认。
+
+* **恢复模式**
 
 
 
