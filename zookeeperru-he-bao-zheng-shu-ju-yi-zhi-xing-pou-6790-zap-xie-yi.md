@@ -19,6 +19,8 @@ Zookeeper 是通过 Zab （Zookeeper Atomic Broadcast）协议来保证分布式
 
 （1）客户端向leader节点发起写请求操作**（写操作必须通过leader节点完成）**。
 
+（2）Leader 服务器将客户端的请求转化为事务 Proposal 提案，每个 Proposal 都有一个全局单调递增的ID，即zxid。
+
 广播协议在所有的通讯过程中使用TCP的FIFO信道，通过使用该信道，使保持有序性变得非常的容易。通过FIFO信道，消息被有序的deliver。只要收到的消息一被处理，其顺序就会被保存下来。
 
 Leader会广播已经被deliver的Proposal消息。在发出一个Proposal消息前，Leader会分配给Proposal一个单调递增的唯一id，称之为zxid。因为Zab保证了因果有序， 所以递交的消息也会按照zxid进行排序。广播是把Proposal封装到消息当中，并添加到指向Follower的输出队列中，通过FIFO信道发送到 Follower。当Follower收到一个Proposal时，会将其写入到磁盘，可以的话进行批量写入。一旦被写入到磁盘媒介当 中，Follower就会发送一个ACK给Leader。 当Leader收到了指定数量的ACK时，Leader将广播commit消息并在本地deliver该消息。当收到Leader发来commit消息 时，Follower也会递交该消息。
