@@ -9,7 +9,7 @@ ZooKeeper服务有两种不同的运行模式。一种是**"独立模式"**\(sta
 3. **单一系统镜像 **如果client A在同一个会话中连接到一台新的节点，要保证新节点的数据不能滞后于故障节点数据**（zookeeper集群中任意节点可提供读服务）**。
 4. **持久性 **如果一个更新一旦成功，其结果就会持久存在并且不会被撤销。不会受到服务器故障的影响。
 
-### **数据一致性保障机制-ZAP协议**
+### **数据一致性保障机制-ZAB协议**
 
 Zookeeper 是通过 Zab （Zookeeper Atomic Broadcast）协议来保证分布式事务的最终一致性。Zab协议有两种模式，它们分别是恢复模式和广播模式。
 
@@ -19,11 +19,15 @@ Zookeeper 是通过 Zab （Zookeeper Atomic Broadcast）协议来保证分布式
 
 （1）客户端向leader节点发起写请求操作**（写操作必须通过leader节点完成）**。
 
-（2）Leader 服务器将客户端的请求转化为事务 Proposal 提案，每个 Proposal 都有一个全局单调递增的ID，即zxid。
+（2）Leader 节点收到客户端写请求后生成事务 Proposal 消息，在广播消息前，leader节点会给每个 Proposal分配一个全局单调递增的ID，即zxid。ZAB保证了因果有序， 所有递交的消息也会按照zxid进行排序。
 
-广播协议在所有的通讯过程中使用TCP的FIFO信道，通过使用该信道，使保持有序性变得非常的容易。通过FIFO信道，消息被有序的deliver。只要收到的消息一被处理，其顺序就会被保存下来。
+（3）Leader 节点与每个 Follower 节点通讯过程使用TCP的FIFO信道，将需要广播的 Proposal 依次放到FIFO信道中，通过FIFO信道，消息被有序的deliver，从而消息保证有序性。
 
-Leader会广播已经被deliver的Proposal消息。在发出一个Proposal消息前，Leader会分配给Proposal一个单调递增的唯一id，称之为zxid。因为Zab保证了因果有序， 所以递交的消息也会按照zxid进行排序。广播是把Proposal封装到消息当中，并添加到指向Follower的输出队列中，通过FIFO信道发送到 Follower。当Follower收到一个Proposal时，会将其写入到磁盘，可以的话进行批量写入。一旦被写入到磁盘媒介当 中，Follower就会发送一个ACK给Leader。 当Leader收到了指定数量的ACK时，Leader将广播commit消息并在本地deliver该消息。当收到Leader发来commit消息 时，Follower也会递交该消息。
+（4）Follower 节点收到一个 Proposal 后，会首先将其以事务日志的方式写入本地磁盘中，写入成功后，Follower节点会向 Leader 发送一个 Ack 响应消息。
+
+（5）Leader 节点接收到超过半数以上 Follower 节点的 Ack 响应消息后，leader将广播 commit 消息。
+
+（6）Leader 节点向所有 Follower节点 广播 commit 消息同时，自身也会完成事务提交。Follower节点 接收到 commit 消息后，会将上一条事务提交。
 
 需要注意的是， 该简化的两阶段提交自身并不能解决Leader故障，所以我们 添加恢复模式来解决Leader故障。
 
