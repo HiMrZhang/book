@@ -10,5 +10,7 @@
 
 ISR \(In-Sync Replicas\)是Leader在Zookeeper（/brokers/topics/\[topic\]/partitions/\[partition\]/state）目录中动态维护基本保持同步的Replica列表，该列表中保存的是与Leader副本保持消息同步的所有副本对应的节点id。如果一个Follower宕机或者其落后情况超过任意参数replica.lag.time.max.ms（延迟时间）、replica.lag.max.messages（延迟条数，Kafka 0.10.x版本后移除）设置阈值，则该Follower副本节点将从ISR列表中剔除并存入OSR\(Outof-Sync Replicas\)列表。
 
-ISR冗余备份机制核心逻辑围绕HW值、LEO值展开。
+ISR冗余备份机制核心逻辑围绕HW值、LEO值展开，接下来了解一下HW、LEO相关概念。
+
+LEO：
 
