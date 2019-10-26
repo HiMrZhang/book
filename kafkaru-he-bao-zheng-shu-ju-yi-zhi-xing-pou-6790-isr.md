@@ -12,5 +12,5 @@ ISR \(In-Sync Replicas\)是Leader在Zookeeper（/brokers/topics/\[topic\]/partit
 
 ISR冗余备份机制核心逻辑围绕HW值、LEO值展开，接下来了解一下HW、LEO相关概念。
 
-LEO：
+LEO（last end offset）日志末端偏移量，记录了该副本对象底层日志文件中下一条消息的位移值。
 
