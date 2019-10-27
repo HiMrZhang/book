@@ -38,5 +38,5 @@ HW（highwatermark），高水印值，任何一个副本对象的HW值一定不
 
 ### 案例分析
 
-![](/assets/isr-2.png)如上图所示，该分区ISR列表值为Broker1、Broker2、Broker3 ID值{1,2,3}，broker1为leader，broker2、broker3为Follower。
+![](/assets/isr-2.png)如上图所示，该分区ISR列表值为Broker1、Broker2、Broker3 ID值{1,2,3}，broker1为leader，broker2、broker3为Follower。Producer向leader发送消息m1、m2、m3。![](/assets/isr-3.png)此时Broker1 crash掉，Broker1 ID从ISR列表中移除，该分区ISR列表值为Broker2、Broker3 ID值{2,3}Broker2选为leader，Broker3为Follower
 
