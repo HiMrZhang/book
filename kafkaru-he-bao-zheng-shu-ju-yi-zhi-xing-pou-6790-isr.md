@@ -18,11 +18,11 @@ HW（highwatermark），高水印值，任何一个副本对象的HW值一定不
 
 ![](/assets/isr-1.png)如上图所示，该分区ISR列表值为Broker1、Broker2、Broker3 ID值{1,2,3}，broker1为leader，broker2、broker3为Follower。
 
-1. Follower向Leader发送fetch请求同步数据（此过程类似于普通Customer）。
+数据同步过程如下：
+
+1. Follower向Leader发送fetch请求（此过程类似于普通Customer）。
 2. Leader接收到Follwer fetch操作后根据fetch请求中Postion从自身log中获取相应数据，并根据fetch请求中Postion更新leader中存储的follower LEO。通过follower LEO读取存在于ISR列表中副本的LEO（包括leader自己的LEO）值，并选择最小的LEO值作为HW值。
 3. Follower接收到leader的数据响应后，开始向底层log写数据，每当新写入一条消息，其LEO值就会加1，写完数据后，通过比较当前LEO值与FETCH响应中leader的HW值，取两者的小者作为新的HW值。
 
 由此可见，Kafka复制机制既不是完全的同步复制，也不是单纯的异步复制，Kafka通过 ISR复制机制在保障数据一致性情况下又可提供高吞吐量。
-
-
 
