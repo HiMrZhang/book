@@ -16,9 +16,7 @@ LEO（last end offset）日志末端偏移量，记录了该副本对象底层�
 
 HW（highwatermark），高水印值，任何一个副本对象的HW值一定不大于其LEO值，而小于或等于HW值的所有消息被认为是“已提交的”或“已备份的”。consumer只能消费已提交的消息，HW之后的数据对consumer不可见。
 
-![](/assets/isr-1.png)如上图所示，该分区ISR列表值为Broker1、Broker2、Broker3 ID值{1,2,3}，broker1为leader，broker2、broker3为Follower。
-
-数据同步过程如下：
+![](/assets/isr-1.png)数据同步过程如下：
 
 1. Follower向Leader发送fetch请求（此过程类似于普通Customer，区别在于内部broker的读取请求，没有HW的限制）。
 2. Leader接收到Follwer fetch操作后根据fetch请求中Postion从自身log中获取相应数据，并根据fetch请求中Postion更新leader中存储的follower LEO。通过follower LEO读取存在于ISR列表中副本的LEO（包括leader自己的LEO）值，并选择最小的LEO值作为HW值。
@@ -37,4 +35,8 @@ HW（highwatermark），高水印值，任何一个副本对象的HW值一定不
 * -1：producer需要等待ISR中的所有follower都确认接收到数据后才算一次发送完成，可靠性最高。但是这样也不能保证数据不丢失，比如当ISR中只剩下一个leader时，这样就变成了acks=1的情况。
 
 如果要提高数据的可靠性，在设置request.required.acks=-1的同时，也要min.insync.replicas这个参数\(可以在broker或者topic层面进行设置\)的配合，这样才能发挥最大的功效。min.insync.replicas这个参数设定ISR中的最小副本数是多少，默认值为1，当且仅当request.required.acks参数设置为-1时，此参数才生效。如果ISR中的副本数少于min.insync.replicas配置的数量时，客户端会返回异常：org.apache.kafka.common.errors.NotEnoughReplicasExceptoin: Messages are rejected since there are fewer in-sync replicas than required。
+
+### 案例分析
+
+![](/assets/isr-2.png)如上图所示，该分区ISR列表值为Broker1、Broker2、Broker3 ID值{1,2,3}，broker1为leader，broker2、broker3为Follower。
 
