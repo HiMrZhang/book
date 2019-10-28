@@ -26,7 +26,7 @@ HW（highwatermark），高水印值，任何一个副本对象的HW值一定不
 
 ### **数据一致性保障**
 
-当producer向leader发送数据时，可以通过request.required.acks参数来设置数据可靠性的级别：
+request.required.acks：该参数在producer向leader发送数据时设置。
 
 * 0：producer无需等待来自broker的确认而继续发送下一批消息。这种情况下数据传输效率最高，但是数据可靠性确是最低的。
 
@@ -34,7 +34,20 @@ HW（highwatermark），高水印值，任何一个副本对象的HW值一定不
 
 * -1：producer需要等待ISR中的所有follower都确认接收到数据后才算一次发送完成，可靠性最高。但是这样也不能保证数据不丢失，比如当ISR中只剩下一个leader时，这样就变成了acks=1的情况。
 
-如果要提高数据的可靠性，在设置request.required.acks=-1的同时，也要min.insync.replicas这个参数\(可以在broker或者topic层面进行设置\)的配合，这样才能发挥最大的功效。min.insync.replicas这个参数设定ISR中的最小副本数是多少，默认值为1，当且仅当request.required.acks参数设置为-1时，此参数才生效。如果ISR中的副本数少于min.insync.replicas配置的数量时，客户端会返回异常：org.apache.kafka.common.errors.NotEnoughReplicasExceptoin: Messages are rejected since there are fewer in-sync replicas than required。
+min.insync.replicas：该参数在broker或者topic层面进行设置，设定ISR中的最小副本数是多少，默认值为1，当且仅当request.required.acks参数设置为-1时，此参数才生效。如果ISR中的副本数少于min.insync.replicas配置的数量时，客户端会返回异常：org.apache.kafka.common.errors.NotEnoughReplicasExceptoin: Messages are rejected since there are fewer in-sync replicas than required。
+
+unclean.leader.election.enable：
+
+* true：默认值，所有replica都有成为leader的可能。
+* false：只有在ISR中存在的replica才有成为leader的可能。
+
+要保证数据写入到Kafka是安全的，高可靠的，需要如下的配置：
+
+* topic的配置：replication.factor&gt;=3,即副本数至少是3个；2&lt;=min.insync.replicas&lt;=replication.factor
+
+* broker的配置：leader的选举条件unclean.leader.election.enable=false
+
+* producer的配置：request.required.acks=-1\(all\)，producer.type=sync
 
 ### 案例分析
 
