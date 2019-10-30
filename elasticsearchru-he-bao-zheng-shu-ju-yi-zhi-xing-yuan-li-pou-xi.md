@@ -22,3 +22,13 @@ Replica写入失败，Primary会执行一些重试逻辑，尽可能保障Replic
 
 为了避免segement从内存flush到磁盘这段时间节点crash掉，导致数据丢失，数据经过lucene引擎处理后会写入TransLog，当节点重启后会根据TransLog恢复数据到Checkpoint。通过设置TransLog的Flush频率可以控制可靠性，要么是按请求，每次请求都Flush；要么是按时间，每隔一段时间Flush一次。一般为了性能考虑，会设置为每隔5秒或者1分钟Flush一次，Flush间隔时间越长，可靠性就会越低。对于GetById查询，可以直接从TransLog中获取数据，这时候就成了RT（Real Time）实时系统。
 
+### **数据一致性保障**
+
+要保证数据写入到ElasticSerach是安全的，高可靠的，需要如下的配置：
+
+* 设置wait\_for\_active\_shards参数大于等于2。
+
+* 设置TransLog的Flush策略为每个请求都要Flush。
+
+
+
