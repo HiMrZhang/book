@@ -2,6 +2,16 @@
 
 ElasticSearch是建立在全文搜索引擎 Apache Lucene\(TM\) 基础上的分布式，高性能、高可用、可伸缩的实时搜索和分析引擎，可支持扩展到上百台服务器，处理PB级别的结构化或非结构化数据。ElasticSerarch通过分片与副本机制来保障集群的高性能、高可靠。ElasticSearch如何保证副本之间数据一致性呢？
 
+## 数据一致性需满足哪些特性呢？
+
+* 持久性：数据写入成功后，数据持久化存在，不会发送回滚或丢失情况。
+
+* 一致性：数据写入成功后，查询时要保证读取到最新版本的数据，不能读取到旧数据。
+
+* 原子性：一个写入或者更新操作，要么成功，要么失败，不允许出现中间状态。
+
+* 隔离性：多个写入并发操作而互不影响。
+
 ## ElasticSearch集群数据同步机制：
 
 ![](/assets/es-1.png)
@@ -24,11 +34,19 @@ Replica写入失败，Primary会执行一些重试逻辑，尽可能保障Replic
 
 ### **数据一致性保障**
 
+* 持久性：Elasticserarch通过Replica和TransLog来共同保障。
+
+* 一致性：数据写入成功后，需完成refresh操作之后才可读，由于无法保证Primary和Replica可同时refresh，所以会出现查询不稳定的情况，这里只能实现最终一致性。
+
+* 原子性：Add和Delete直接调用Lucene的接口，进行原子操作。update操作通过Delete-Then-Add完成，在Delete操作之前会加Refresh Lock，禁止Refresh操作，等Add操作完成后释放Refresh Lock后才能被Refresh，这样就保证了Delete-Then-Add的原子性。
+
+* 隔离性：采用Version和局部锁来保证更新的是特定版本的数据。
+
 要保证数据写入到ElasticSerach是安全的，高可靠的，需要如下的配置：
 
 * 设置wait\_for\_active\_shards参数大于等于2。
 
 * 设置TransLog的Flush策略为每个请求都要Flush。
 
-
+鱼与熊掌不可兼得，大家需要根据实际场景合理设置参数在可靠性和可用性之间进行折中。
 
