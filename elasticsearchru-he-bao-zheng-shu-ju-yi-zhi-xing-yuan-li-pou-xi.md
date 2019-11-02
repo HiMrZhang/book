@@ -34,7 +34,7 @@ Replica写入失败，Primary会执行一些重试逻辑，尽可能保障Replic
 
 ### **数据一致性保障**
 
-* 持久性：Elasticserarch通过Replica和TransLog来共同保障。
+* 持久性：通过Replica和TransLog两种机制来共同保障。
 
 * 一致性：数据写入成功后，需完成refresh操作之后才可读，由于无法保证Primary和Replica可同时refresh，所以会出现查询不稳定的情况，这里只能实现最终一致性。
 
