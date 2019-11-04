@@ -2,6 +2,10 @@
 
 共识算法Raft通过集群中唯一的领导者管理集群其他服务器上的日志复制来保证数据一致性。共识问题在Raft中被分解为leader选举、log复制两个相对独立的子问题。
 
+## 一致性问题
+
+在分布式系统中,一致性问题\(consensus problem\)是指对于一组服务器，给定一组操作，我们需要一个协议使得最后它们的结果达成一致。
+
 ## leader选举机制
 
 Raft集群中每个节点有三种状态：Follower，Candidate，Leader，状态之间是互相转换。节点启动的初始状态为follower，每个Follower节点上都有一个倒计时器 （随机在 150ms 到 300ms 之间设置Election Timeout时间），倒计时截止后状态转换为Candidate，并开始发起leader选举。Follower节点通过接受leader hearteat或者candidate RequestVote请求重设Election Timeout来维持Follower状态。
@@ -12,6 +16,4 @@ Raft集群中每个节点有三种状态：Follower，Candidate，Leader，状�
 4. Candidate 节点获得超过一半的节点投支持票，该节点状态将转换为leader。其它Candidate 节点收到term值等于或大于当前自身term值的leader hearteat后，该节点状态将转换为follower。如果Candidate 节点定时器截止，仍没有选出leader，将由最先截止的Candidate 节点发起下一轮投票（解决多个Candidate同时获取相同选票无法确定leader问题）。
 
 随机设置Election Timeout时间，可避免多个follower同时变为Candidate状态，发起leader投票。
-
-
 
