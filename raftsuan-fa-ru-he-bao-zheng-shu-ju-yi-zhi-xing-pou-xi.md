@@ -31,5 +31,3 @@ Raft集群采用master/slave结构，leader为master，follower为slave，只有
 
 
 
-
-
