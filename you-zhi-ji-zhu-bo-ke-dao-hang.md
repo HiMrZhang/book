@@ -16,5 +16,5 @@ Elasticsearch分布式一致性原理剖析：[https://segmentfault.com/a/119000
 
 Raft一致性算法流程描述：[https://www.jianshu.com/p/37877e046132](https://www.jianshu.com/p/37877e046132)
 
-
+raft图解：[https://www.cnblogs.com/bonelee/p/6408318.html](https://www.cnblogs.com/bonelee/p/6408318.html)
 

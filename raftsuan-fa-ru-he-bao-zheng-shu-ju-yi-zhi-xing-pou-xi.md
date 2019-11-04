@@ -29,5 +29,13 @@ Raft集群采用master/slave结构，leader为master，follower为slave，只有
 
 ## 案例分析
 
+![](/assets/rsa-1.png)
 
+客户端依次向leader写入x=3、y=2、c=1，节点日志复制情况如上图所示。![](/assets/rsa-2.png)
+
+server1 crash掉，由于server2中log更（gèng）新，server2被选举为leader。y=2、x=3数据处于未提交状态，Client 不会收到 Ack 超时失败后可发起重试在新leader中重新提交。
+
+![](/assets/rsa-3.png)leader将y=2同步至follower并提交，同时接收新请求d=4。y=2操作在写入失败后可发起重试操作，针对这种情况 Raft通过内部去重机制实现幂等性来保证一致性。
+
+![](/assets/rsa-4.png)server1恢复后，
 
