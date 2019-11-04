@@ -27,5 +27,9 @@ Raft集群采用master/slave结构，leader为master，follower为slave，只有
 4. leader节点收到半数以上的节点回应该条记录已写入日志，则可认为该记录是有效的，leader节点将该记录提交，并将执行结果返回给客户端。leader节点在下次心跳AppendEntries RPCs请求中，会记录可被提交的日志条目编号commitIndex。
 5. follower节点在收到leader的AppendEntries RPCs请求后，会根据请求中的commitIndex，将本地日志中commitindex之前未提交记录提交。
 
+## 案例分析
+
+
+
 
 
