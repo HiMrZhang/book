@@ -8,6 +8,8 @@
 
 ## leader选举机制
 
+![](/assets/rsa-5.png)
+
 Raft集群中每个节点有三种状态：Follower，Candidate，Leader，状态之间是互相转换。节点启动的初始状态为follower，每个Follower节点上都有一个倒计时器 （随机在 150ms 到 300ms 之间设置Election Timeout时间），倒计时截止后状态转换为Candidate，并开始发起leader选举。Follower节点通过接受leader hearteat或者candidate RequestVote请求重设Election Timeout来维持Follower状态。
 
 1. Follower节点定时器截止后增加当前的term（一段任意的时间序号，相当于一个国家的朝代，每个Term以选举开始，如果选举成功，则集群会在当前Term下由当前的leader管理），节点状态转换为Candidate。
@@ -33,9 +35,9 @@ Raft集群采用master/slave结构，leader为master，follower为slave，只有
 
 客户端依次向leader写入x=3、y=2、c=1，节点日志复制情况如上图所示。![](/assets/rsa-2.png)
 
-server1 crash掉，由于server2中log更（gèng）新，server2被选举为leader。y=2、x=3数据处于未提交状态，Client 不会收到 Ack 超时失败后可发起重试在新leader中重新提交。
+server1 crash掉，由于server2中log更（gèng）新，server2被选举为leader。y=2、x=3数据处于未提交状态，Client超时失败后可发起重试在新leader中重新提交。
 
-![](/assets/rsa-3.png)leader将y=2同步至follower并提交，同时接收新请求d=4。y=2操作在写入失败后可发起重试操作，针对这种情况 Raft通过内部去重机制实现幂等性来保证一致性。
+![](/assets/rsa-3.png)leader将y=2同步至follower并提交，同时接收新请求d=4。y=2操作在写入失败后可发起重试操作，针对这种情况 Raft通过内部去重机制状态机（用来处理从日志中读出的指令，按照相同顺序运行相同的指令后，达到的状态是一致的）实现幂等性来保证一致性。
 
 ![](/assets/rsa-4.png)server1恢复后，将未提交消息清除掉，然后在完成log同步。
 
