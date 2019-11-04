@@ -33,7 +33,7 @@ Zookeeper 是通过 Zab （Zookeeper Atomic Broadcast）协议来保证分布式
 
 #### 二、**恢复模式**
 
-Leader 服务器出现崩溃或者由于网络原因导致 Leader 服务器失去了与过半 Follower 的联系，那么就会进入崩溃恢复模式。为了保证进度，恢复过程中必须选举出一个新Leader，并且最终让所有的Server拥有一个正确的状态。恢复模式主要包括两部分：Leader选举 和 数据恢复
+Leader 服务器出现崩溃或者由于网络原因导致 Leader 服务器失去了与过半 Follower 的联系，那么就会进入崩溃恢复模式。为了保证进度，恢复过程中必须选举出一个新Leader，并且最终让所有的Server拥有一个正确的状态。恢复模式主要包括两部分：Leader选举 和数据恢复
 
 **恢复阶段保证**
 
