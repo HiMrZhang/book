@@ -37,5 +37,5 @@ server1 crash掉，由于server2中log更（gèng）新，server2被选举为lea
 
 ![](/assets/rsa-3.png)leader将y=2同步至follower并提交，同时接收新请求d=4。y=2操作在写入失败后可发起重试操作，针对这种情况 Raft通过内部去重机制实现幂等性来保证一致性。
 
-![](/assets/rsa-4.png)server1恢复后，
+![](/assets/rsa-4.png)server1恢复后，将未提交消息清除掉，然后在完成log同步。
 
