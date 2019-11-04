@@ -6,7 +6,12 @@
 
 Raft集群中每个节点有三种状态：Follower，Candidate，Leader，状态之间是互相转换。节点启动的初始状态为follower，每个Follower节点上都有一个倒计时器 （随机在 150ms 到 300ms 之间设置Election Timeout时间），倒计时截止后状态转换为Candidate，并开始发起leader选举。Follower节点通过接受leader hearteat或者candidate RequestVote请求重设Election Timeout来维持Follower状态。
 
-1. Candidate节点首先增加投票计数器，投票给自己作为新的领导者。
+1. Follower节点定时器截止后增加当前的term（一段任意的时间序号，相当于一个国家的朝代，每个Term以选举开始，如果选举成功，则集群会在当前Term下由当前的leader管理），节点状态转换为Candidate。
+2. Candidate节点首先增加投票计数器，投票给自己作为新的领导者，然后向集群中的其他服务器发送RequestVote RPC请求。
+3. 收到RequestVote的服务器，在同一term中只会按照先到先得投票给一个与自身log一样或者更（gèng）新的candidate节点。
+4. Candidate 节点获得超过一半的节点投支持票，该节点状态将转换为leader。其它Candidate 节点收到term值等于或大于当前自身term值的leader hearteat后，该节点状态将转换为follower。如果Candidate 节点定时器截止，仍没有选出leader，将由最先截止的Candidate 节点发起下一轮投票（解决多个Candidate同时获取相同选票无法确定leader问题）。
+
+随机设置Election Timeout时间，可避免多个follower同时变为Candidate状态，发起leader投票。
 
 
 
