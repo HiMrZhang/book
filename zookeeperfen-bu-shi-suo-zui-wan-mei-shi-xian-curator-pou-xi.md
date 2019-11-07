@@ -33,15 +33,30 @@ InterProcessMutex类acquire\(\)方法通过调用internalLock\(\)方法完成加
 
 （3）获取锁成功后向threadData中添加数据，记录该线程已经获取锁。
 
-继续分析attemptlock\(\)方法![](/assets/curator-2.png)
+继续分析attemptlock\(\)方法  
+![](/assets/curator-2.png)
+
+![](/assets/curator-2.png)
+
+![](/assets/curator-2.png)
 
 （1）ourPath = driver.createsTheLock\(client, path, localLockNodeBytes\);创建临时有序节点。
 
 （2）hasTheLock = internalLockLoop\(startMillis, millisToWait, ourPath\);判断上一步中创建的临时节点是否是根结点下最小的节点。如果是返回true，加锁成功。
 
-## 锁等待
 
-![](/assets/curator-3.png)
+
+继续分析internalLockLoop\(\)方法
+
+![](/assets/curator-3.png)（1）进入循环，获取根结点下面所有子节点，判断上一步中创建的临时节点是否是根结点下最小的节点。如果是直接返回。
+
+（2）对当前节点前一个节点加watch。
+
+（3）调用wait\(\)方法阻塞。
+
+## 解锁
+
+
 
 
 
