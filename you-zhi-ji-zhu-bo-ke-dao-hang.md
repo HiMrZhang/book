@@ -18,11 +18,13 @@ Raft一致性算法流程描述：[https://www.jianshu.com/p/37877e046132](https
 
 Raft 为什么是更易理解的分布式一致性算法：[https://www.cnblogs.com/mindwind/p/5231986.html](https://www.cnblogs.com/mindwind/p/5231986.html)
 
+## redis
+
+redission实现分布式锁：[https://my.oschina.net/haogrgr/blog/469439](https://my.oschina.net/haogrgr/blog/469439)
+
 ## 优质专栏
 
 [https://yq.aliyun.com/articles/580962](https://yq.aliyun.com/articles/580962)
 
 [https://blog.csdn.net/u013256816/article/details/98477122](https://blog.csdn.net/u013256816/article/details/98477122)
-
-
 
