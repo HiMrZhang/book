@@ -62,7 +62,7 @@ InterProcessMutex类acquire\(\)方法通过调用internalLock\(\)方法完成加
 
 ## 总结
 
-
+zookeeper集群使用zap协议来保证集群之间数据的一致性，频繁的进行写、监听操作将对zk集群产生较大压力，所以不推荐大家使用。
 
 
 
