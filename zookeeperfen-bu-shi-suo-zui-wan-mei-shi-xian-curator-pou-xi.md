@@ -36,15 +36,9 @@ InterProcessMutex类acquire\(\)方法通过调用internalLock\(\)方法完成加
 继续分析attemptlock\(\)方法  
 ![](/assets/curator-2.png)
 
-![](/assets/curator-2.png)
-
-![](/assets/curator-2.png)
-
 （1）ourPath = driver.createsTheLock\(client, path, localLockNodeBytes\);创建临时有序节点。
 
 （2）hasTheLock = internalLockLoop\(startMillis, millisToWait, ourPath\);判断上一步中创建的临时节点是否是根结点下最小的节点。如果是返回true，加锁成功。
-
-
 
 继续分析internalLockLoop\(\)方法
 
@@ -55,6 +49,18 @@ InterProcessMutex类acquire\(\)方法通过调用internalLock\(\)方法完成加
 （3）调用wait\(\)方法阻塞。
 
 ## 解锁
+
+![](/assets/curator-4.png)InterProcessMutex类release\(\)方法完成解锁操作。
+
+（1）判断是否存在锁重入的情况，如果存在锁重入，lockcount减一，如果lockcount大于0直接返回；
+
+（2）调用releaseLock\(\)方法完成解锁操作。
+
+继续继续分析releaseLock\(\)方法。
+
+![](/assets/curator-5.png)releaseLock\(\)调用deleteOurPath\(\)方法将临时节点删除。删除后watch触发，调用notifyFromWatcher\(\)方法执行notifyAll\(\)方法，将线程唤醒继续执行操作。
+
+## 总结
 
 
 
