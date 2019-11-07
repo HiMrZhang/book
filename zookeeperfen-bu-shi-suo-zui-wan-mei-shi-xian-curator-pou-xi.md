@@ -2,7 +2,7 @@
 
 zookeeper分布式锁基于zookeeper中有序节点实现分布有序等待锁队列，通过watch机制监听锁释放，大大提升强锁效率，避免自旋等锁，浪费cpu资源，同时只watch前一个节点可避免锁释放之后通知所有节点重新竞争锁导致的羊群效应。
 
-curator提供了InterProcessMutex（分布式可重入排它锁）、InterProcessSemaphoreMutex（分布式排它锁）、InterProcessReadWriteLock（分布式读写锁）、InterProcessMultiLock（将多个锁作为单个实体管理的容器）四种不同的锁实现，本文将介绍InterProcessMutex的实现原理。
+curator基于zookeeper实现了InterProcessMutex（分布式可重入排它锁）、InterProcessSemaphoreMutex（分布式排它锁）、InterProcessReadWriteLock（分布式读写锁）、InterProcessMultiLock（将多个锁作为单个实体管理的容器）四种不同的锁实现，本文将介绍InterProcessMutex的实现原理。
 
 ## 实现步骤
 
@@ -63,6 +63,4 @@ InterProcessMutex类acquire\(\)方法通过调用internalLock\(\)方法完成加
 ## 总结
 
 zookeeper集群使用zap协议来保证集群之间数据的一致性，频繁的进行写、监听操作将对zk集群产生较大压力，所以不推荐大家使用。
-
-
 
