@@ -1,6 +1,6 @@
 # zookeeper分布式锁最完美实现Curator剖析
 
-zookeeper分布式锁基于zookeeper中有序节点实现分布有序等待锁队列，通过watch机制监听锁释放，大大提升强锁效率，避免自旋等锁，浪费cpu资源，同时只watch前一个节点可避免锁释放之后通知所有节点重新竞争锁导致的羊群效应。
+zookeeper分布式锁基于zookeeper中有序节点实现分布有序锁等待队列，通过watch机制监听锁释放，大大提升抢锁效率，避免自旋等锁，浪费cpu资源，同时只watch前一个节点可避免锁释放之后通知所有节点重新竞争锁导致的羊群效应。
 
 curator基于zookeeper实现了InterProcessMutex（分布式可重入排它锁）、InterProcessSemaphoreMutex（分布式排它锁）、InterProcessReadWriteLock（分布式读写锁）、InterProcessMultiLock（将多个锁作为单个实体管理的容器）四种不同的锁实现，本文将介绍InterProcessMutex的实现原理。
 
