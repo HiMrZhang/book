@@ -122,7 +122,7 @@ public class LockSupportDemo {
 ```
 2019-11-10 17:42:21.714  [main] INFO  com.easysoft.LockSupportDemo -unpark thread[task-1]  
 2019-11-10 17:42:24.712  [task-1] INFO  com.easysoft.LockSupportDemo -in thread[task-1]  
-2019-11-10 17:42:24.713  [task-1] INFO  com.easysoft.LockSupportDemo -park thread[task-1]  
+2019-11-10 17:42:24.713  [task-1] INFO  com.easysoft.LockSupportDemo -park thread[task-1]
 ```
 
 （3）park\(\)不响应中断，发生线程中断，park\(\)操作不生效。
@@ -181,5 +181,5 @@ public class LockSupportDemo {
 2019-11-10 17:46:29.030  [task-1] INFO  com.easysoft.LockSupportDemo -do something...
 ```
 
-（4）park\(\)与park\(Object blocker\)方法区别：设置一个线程和关联的blocker对象，blocker用来做分析，便于排查问题。![](/assets/locksupport-1.png)执行jstack pid；命令查看。
+（4）park\(Object blocker\)方法区别：设置一个线程和关联的blocker对象，blocker用来做分析，便于排查问题。![](/assets/locksupport-1.png)执行jstack pid；命令查看。
 
