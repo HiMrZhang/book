@@ -20,7 +20,7 @@ unPark\(\)执行过程：
 
 ## Tips
 
-（1）线程启动后unPark\(\)在park\(\)操作前执行仍可继续运行。
+（1）线程启动后unPark\(\)在park\(\)操作前执行线程仍可继续运行。
 
 ```
 package com.easysoft;
@@ -125,7 +125,7 @@ public class LockSupportDemo {
 2019-11-10 17:42:24.713  [task-1] INFO  com.easysoft.LockSupportDemo -park thread[task-1]
 ```
 
-（3）park\(\)不响应中断，发生线程中断，park\(\)操作不生效。
+（3）park\(\)不响应中断，发生线程中断，执行park\(\)操作线程仍可继续运行。
 
 ```
 package com.easysoft;
