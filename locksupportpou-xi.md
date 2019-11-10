@@ -20,7 +20,7 @@ unPark\(\)执行过程：
 
 ## Tips
 
-（1）线程启动后unPark\(\)在park\(\)操作前执行线程仍可继续运行。
+（1）线程启动后unPark\(\)操作在park\(\)操作前执行线程仍可继续运行。可避免死锁发生。
 
 ```
 package com.easysoft;
