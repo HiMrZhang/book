@@ -11,4 +11,5 @@
 * [Redis分布式锁最完美实现Redisson剖析](redisfen-bu-shi-suo-zui-wan-mei-shi-xian-redisson-pou-xi.md)
 * [zookeeper分布式锁最完美实现Curator剖析](zookeeperfen-bu-shi-suo-zui-wan-mei-shi-xian-curator-pou-xi.md)
 * [LockSupport剖析](locksupportpou-xi.md)
+* [volatile剖析](volatilepou-xi.md)
 
