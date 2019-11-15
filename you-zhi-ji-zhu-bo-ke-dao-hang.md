@@ -34,3 +34,5 @@ jdk1.8 Unsafe类 park和unpark方法解析：[https://blog.csdn.net/a7980718/art
 
 并发包[ https://my.oschina.net/zhupanxin/blog/269037](https://my.oschina.net/hosee/blog/597934)
 
+高并发限流 [https://www.iteye.com/blog/jinnianshilongnian-2305117](https://www.iteye.com/blog/jinnianshilongnian-2305117)
+
