@@ -22,9 +22,11 @@ Raft 为什么是更易理解的分布式一致性算法：[https://www.cnblogs.
 
 redission实现分布式锁：[https://my.oschina.net/haogrgr/blog/469439](https://my.oschina.net/haogrgr/blog/469439)
 
-## java理论
+## java并发包
 
 jdk1.8 Unsafe类 park和unpark方法解析：[https://blog.csdn.net/a7980718/article/details/83661613](https://blog.csdn.net/a7980718/article/details/83661613)
+
+为什么ConcurrentHashMap的读操作不需要加锁：[https://www.cnblogs.com/keeya/p/9632958.html](https://www.cnblogs.com/keeya/p/9632958.html)
 
 ## 优质专栏
 
