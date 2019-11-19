@@ -28,6 +28,8 @@ redis为什么这么快：[https://blog.csdn.net/chenyao1994/article/details/794
 
 redi不同集群模式搭建：[https://blog.csdn.net/miss1181248983/article/details/90056960](https://blog.csdn.net/miss1181248983/article/details/90056960)
 
+Redis的三个框架：Jedis,Redisson,Lettuce:[https://www.cnblogs.com/liyan492/p/9858548.html](https://www.cnblogs.com/liyan492/p/9858548.html)
+
 ## java并发包
 
 jdk1.8 Unsafe类 park和unpark方法解析：[https://blog.csdn.net/a7980718/article/details/83661613](https://blog.csdn.net/a7980718/article/details/83661613)
