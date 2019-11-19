@@ -26,6 +26,8 @@ Redis缓存击穿，穿透，雪崩等问题，及解决方案：[https://blog.c
 
 redis为什么这么快：[https://blog.csdn.net/chenyao1994/article/details/79491337](https://blog.csdn.net/chenyao1994/article/details/79491337)
 
+redi不同集群模式搭建：[https://blog.csdn.net/miss1181248983/article/details/90056960](https://blog.csdn.net/miss1181248983/article/details/90056960)
+
 ## java并发包
 
 jdk1.8 Unsafe类 park和unpark方法解析：[https://blog.csdn.net/a7980718/article/details/83661613](https://blog.csdn.net/a7980718/article/details/83661613)
