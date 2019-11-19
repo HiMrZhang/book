@@ -22,6 +22,8 @@ Raft 为什么是更易理解的分布式一致性算法：[https://www.cnblogs.
 
 redission实现分布式锁：[https://my.oschina.net/haogrgr/blog/469439](https://my.oschina.net/haogrgr/blog/469439)
 
+Redis缓存击穿，穿透，雪崩等问题，及解决方案：[https://blog.csdn.net/qq\_27391133/article/details/80364658](https://blog.csdn.net/qq_27391133/article/details/80364658)
+
 ## java并发包
 
 jdk1.8 Unsafe类 park和unpark方法解析：[https://blog.csdn.net/a7980718/article/details/83661613](https://blog.csdn.net/a7980718/article/details/83661613)
