@@ -32,6 +32,8 @@ Redis的三个框架：Jedis,Redisson,Lettuce:[https://www.cnblogs.com/liyan492/
 
 Spring boot starter data-redis与jedis关系：[https://www.jianshu.com/p/c7b4cd47ad65](https://www.jianshu.com/p/c7b4cd47ad65)
 
+聊聊redis的监控工具：[https://www.jianshu.com/p/831bf6c8af4f](https://www.jianshu.com/p/831bf6c8af4f)
+
 ## java并发包
 
 jdk1.8 Unsafe类 park和unpark方法解析：[https://blog.csdn.net/a7980718/article/details/83661613](https://blog.csdn.net/a7980718/article/details/83661613)
