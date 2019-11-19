@@ -30,6 +30,8 @@ redi不同集群模式搭建：[https://blog.csdn.net/miss1181248983/article/det
 
 Redis的三个框架：Jedis,Redisson,Lettuce:[https://www.cnblogs.com/liyan492/p/9858548.html](https://www.cnblogs.com/liyan492/p/9858548.html)
 
+Spring boot starter data-redis与jedis关系：[https://www.jianshu.com/p/c7b4cd47ad65](https://www.jianshu.com/p/c7b4cd47ad65)
+
 ## java并发包
 
 jdk1.8 Unsafe类 park和unpark方法解析：[https://blog.csdn.net/a7980718/article/details/83661613](https://blog.csdn.net/a7980718/article/details/83661613)
