@@ -44,6 +44,8 @@ jdk1.8 Unsafe类 park和unpark方法解析：[https://blog.csdn.net/a7980718/art
 
 tcp三次握手四次挥手过程：[https://blog.csdn.net/sssnmnmjmf/article/details/68486261](https://blog.csdn.net/sssnmnmjmf/article/details/68486261)
 
+服务器TIME\_WAIT和CLOSE\_WAIT分析和解决办法：[https://segmentfault.com/a/1190000014652451](https://segmentfault.com/a/1190000014652451)
+
 ## 优质专栏
 
 [https://yq.aliyun.com/articles/580962](https://yq.aliyun.com/articles/580962)
