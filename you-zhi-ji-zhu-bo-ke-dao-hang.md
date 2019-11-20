@@ -40,6 +40,10 @@ jdk1.8 Unsafe类 park和unpark方法解析：[https://blog.csdn.net/a7980718/art
 
 为什么ConcurrentHashMap的读操作不需要加锁：[https://www.cnblogs.com/keeya/p/9632958.html](https://www.cnblogs.com/keeya/p/9632958.html)
 
+## 网络
+
+tcp三次握手四次挥手过程：[https://blog.csdn.net/sssnmnmjmf/article/details/68486261](https://blog.csdn.net/sssnmnmjmf/article/details/68486261)
+
 ## 优质专栏
 
 [https://yq.aliyun.com/articles/580962](https://yq.aliyun.com/articles/580962)
