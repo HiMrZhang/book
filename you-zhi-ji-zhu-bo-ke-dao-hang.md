@@ -50,6 +50,8 @@ tcp三次握手四次挥手过程：[https://blog.csdn.net/sssnmnmjmf/article/de
 
 如果数据存在则更新，不存在则插入:[https://www.cnblogs.com/singworld/p/9482574.html](https://www.cnblogs.com/singworld/p/9482574.html)
 
+mysql死锁问题排查：[https://www.cnblogs.com/boboshenqi/p/10710943.html](https://www.cnblogs.com/boboshenqi/p/10710943.html)
+
 ## 优质专栏
 
 [https://yq.aliyun.com/articles/580962](https://yq.aliyun.com/articles/580962)
