@@ -46,6 +46,10 @@ tcp三次握手四次挥手过程：[https://blog.csdn.net/sssnmnmjmf/article/de
 
 服务器TIME\_WAIT和CLOSE\_WAIT分析和解决办法：[https://segmentfault.com/a/1190000014652451](https://segmentfault.com/a/1190000014652451)
 
+## mysql
+
+如果数据存在则更新，不存在则插入:[https://www.cnblogs.com/singworld/p/9482574.html](https://www.cnblogs.com/singworld/p/9482574.html)
+
 ## 优质专栏
 
 [https://yq.aliyun.com/articles/580962](https://yq.aliyun.com/articles/580962)
