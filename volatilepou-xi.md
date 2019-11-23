@@ -2,7 +2,7 @@
 
 ## volatile有哪些特性呢？
 
-1.原子性：volatile修饰的long、double，读/写操作是原子的。对于64位的long和double，如果没有被volatile修饰，在32位操作系统中long和double的读/写操作通过两次32位读/写操作完成，两次操作之间可能发生线程切换。
+1.原子性：volatile修饰的long、double，读/写操作是原子的。对于64位的long和double，如果没有被volatile修饰，在32位操作系统中long和double的读/写操作通过两次32位读/写操作完成，两次操作之间可发生中断。
 
 2.可见性：线程修改了volatile变量的值后，其他线程立即可以感知到这个值的修改。
 
