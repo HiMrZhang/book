@@ -34,9 +34,9 @@ Spring boot starter data-redis与jedis关系：[https://www.jianshu.com/p/c7b4cd
 
 聊聊redis的监控工具：[https://www.jianshu.com/p/831bf6c8af4f](https://www.jianshu.com/p/831bf6c8af4f)
 
-## jmm内存模型
+## jvm
 
-[https://blog.csdn.net/aichuanwendang/article/details/84589712](https://blog.csdn.net/aichuanwendang/article/details/84589712)
+java内存模型：[https://blog.csdn.net/aichuanwendang/article/details/84589712](https://blog.csdn.net/aichuanwendang/article/details/84589712)
 
 ## java并发包
 
