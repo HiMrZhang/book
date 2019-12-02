@@ -62,7 +62,7 @@ mysql死锁问题排查：[https://www.cnblogs.com/boboshenqi/p/10710943.html](h
 
 [https://blog.csdn.net/u013256816/article/details/98477122](https://blog.csdn.net/u013256816/article/details/98477122)
 
-并发包[ https://my.oschina.net/zhupanxin/blog/269037](https://my.oschina.net/hosee/blog/597934)
+并发包[ ](https://my.oschina.net/hosee/blog/597934)[https://my.oschina.net/hosee/blog/597934](https://my.oschina.net/hosee/blog/597934)
 
 高并发限流 [https://www.iteye.com/blog/jinnianshilongnian-2305117](https://www.iteye.com/blog/jinnianshilongnian-2305117)
 
