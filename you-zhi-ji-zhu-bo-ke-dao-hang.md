@@ -66,3 +66,5 @@ mysql死锁问题排查：[https://www.cnblogs.com/boboshenqi/p/10710943.html](h
 
 高并发限流 [https://www.iteye.com/blog/jinnianshilongnian-2305117](https://www.iteye.com/blog/jinnianshilongnian-2305117)
 
+java8 lambda、function、stream[https://blog.csdn.net/qq\_28410283/article/details/80782808](https://blog.csdn.net/qq_28410283/article/details/80782808)
+
