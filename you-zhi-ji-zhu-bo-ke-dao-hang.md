@@ -56,6 +56,10 @@ tcp三次握手四次挥手过程：[https://blog.csdn.net/sssnmnmjmf/article/de
 
 mysql死锁问题排查：[https://www.cnblogs.com/boboshenqi/p/10710943.html](https://www.cnblogs.com/boboshenqi/p/10710943.html)
 
+## java基础
+
+Java之BigDecimal详解：[https://www.cnblogs.com/zhangyinhua/p/11545305.html](https://www.cnblogs.com/zhangyinhua/p/11545305.html)
+
 ## 优质专栏
 
 [https://yq.aliyun.com/articles/580962](https://yq.aliyun.com/articles/580962)
