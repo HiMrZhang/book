@@ -62,6 +62,14 @@ mysql死锁问题排查：[https://www.cnblogs.com/boboshenqi/p/10710943.html](h
 
 Java之BigDecimal详解：[https://www.cnblogs.com/zhangyinhua/p/11545305.html](https://www.cnblogs.com/zhangyinhua/p/11545305.html)
 
+## 分布式事务
+
+微服务架构下的数据一致性保证：
+
+分布式事务实战：[https://mp.weixin.qq.com/s/OCxFC42l\_Ug3rmUH1oCWoQ](https://mp.weixin.qq.com/s/OCxFC42l_Ug3rmUH1oCWoQ)
+
+
+
 ## 优质专栏
 
 [https://yq.aliyun.com/articles/580962](https://yq.aliyun.com/articles/580962)
