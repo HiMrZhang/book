@@ -64,11 +64,9 @@ Java之BigDecimal详解：[https://www.cnblogs.com/zhangyinhua/p/11545305.html](
 
 ## 分布式事务
 
-微服务架构下的数据一致性保证：
-
 分布式事务实战：[https://mp.weixin.qq.com/s/OCxFC42l\_Ug3rmUH1oCWoQ](https://mp.weixin.qq.com/s/OCxFC42l_Ug3rmUH1oCWoQ)
 
-
+微服务下的数据一致性的几种实现方式之概述:[https://www.jianshu.com/p/b264a196b177](https://www.jianshu.com/p/b264a196b177)
 
 ## 优质专栏
 
