@@ -70,6 +70,8 @@ Java之BigDecimal详解：[https://www.cnblogs.com/zhangyinhua/p/11545305.html](
 
 saga模式：[https://www.jianshu.com/p/e4b662407c66](https://www.jianshu.com/p/e4b662407c66)
 
+我们是怎样打造一款分布式数据库的：[https://mp.weixin.qq.com/s/KxvUMJ3xMQRCQD8pcJYllg](https://mp.weixin.qq.com/s/KxvUMJ3xMQRCQD8pcJYllg)
+
 ## 优质专栏
 
 [https://yq.aliyun.com/articles/580962](https://yq.aliyun.com/articles/580962)
