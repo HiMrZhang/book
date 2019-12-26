@@ -62,6 +62,8 @@ mysql死锁问题排查：[https://www.cnblogs.com/boboshenqi/p/10710943.html](h
 
 Java之BigDecimal详解：[https://www.cnblogs.com/zhangyinhua/p/11545305.html](https://www.cnblogs.com/zhangyinhua/p/11545305.html)
 
+java8计算模型：[https://blog.reactor.top/2018/01/27/计算模型之Java8](https://blog.reactor.top/2018/01/27/计算模型之Java8)
+
 ## 分布式事务
 
 分布式事务实战-servicecomb-pack：[https://mp.weixin.qq.com/s/OCxFC42l\_Ug3rmUH1oCWoQ](https://mp.weixin.qq.com/s/OCxFC42l_Ug3rmUH1oCWoQ)
