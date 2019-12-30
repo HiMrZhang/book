@@ -80,6 +80,8 @@ saga模式：[https://www.jianshu.com/p/e4b662407c66](https://www.jianshu.com/p/
 
 xa、2pc、3pc：[https://blog.csdn.net/aa1215018028/article/details/81158224](https://blog.csdn.net/aa1215018028/article/details/81158224)
 
+分布式一致性算法：[https://draveness.me/consensus](https://draveness.me/consensus)
+
 ## 优质专栏
 
 [https://yq.aliyun.com/articles/580962](https://yq.aliyun.com/articles/580962)
