@@ -18,6 +18,8 @@ Raft一致性算法流程描述：[https://www.jianshu.com/p/37877e046132](https
 
 Raft 为什么是更易理解的分布式一致性算法：[https://www.cnblogs.com/mindwind/p/5231986.html](https://www.cnblogs.com/mindwind/p/5231986.html)
 
+分布式一致性算法：[https://draveness.me/consensus](https://draveness.me/consensus)
+
 ## redis
 
 redission实现分布式锁：[https://my.oschina.net/haogrgr/blog/469439](https://my.oschina.net/haogrgr/blog/469439)
@@ -79,8 +81,6 @@ saga模式：[https://www.jianshu.com/p/e4b662407c66](https://www.jianshu.com/p/
 我们是怎样打造一款分布式数据库的：[https://mp.weixin.qq.com/s/KxvUMJ3xMQRCQD8pcJYllg](https://mp.weixin.qq.com/s/KxvUMJ3xMQRCQD8pcJYllg)
 
 xa、2pc、3pc：[https://blog.csdn.net/aa1215018028/article/details/81158224](https://blog.csdn.net/aa1215018028/article/details/81158224)
-
-分布式一致性算法：[https://draveness.me/consensus](https://draveness.me/consensus)
 
 ## 优质专栏
 
