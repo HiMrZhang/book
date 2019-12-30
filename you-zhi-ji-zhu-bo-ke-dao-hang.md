@@ -78,6 +78,8 @@ saga模式：[https://www.jianshu.com/p/e4b662407c66](https://www.jianshu.com/p/
 
 我们是怎样打造一款分布式数据库的：[https://mp.weixin.qq.com/s/KxvUMJ3xMQRCQD8pcJYllg](https://mp.weixin.qq.com/s/KxvUMJ3xMQRCQD8pcJYllg)
 
+xa、2pc、3pc：[https://blog.csdn.net/aa1215018028/article/details/81158224](https://blog.csdn.net/aa1215018028/article/details/81158224)
+
 ## 优质专栏
 
 [https://yq.aliyun.com/articles/580962](https://yq.aliyun.com/articles/580962)
