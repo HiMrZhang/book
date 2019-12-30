@@ -82,6 +82,8 @@ saga模式：[https://www.jianshu.com/p/e4b662407c66](https://www.jianshu.com/p/
 
 xa、2pc、3pc：[https://blog.csdn.net/aa1215018028/article/details/81158224](https://blog.csdn.net/aa1215018028/article/details/81158224)
 
+seata分布式事务原理解释，AT模式简介：[https://blog.csdn.net/tianyaleixiaowu/article/details/95208906](https://blog.csdn.net/tianyaleixiaowu/article/details/95208906)
+
 ## 优质专栏
 
 [https://yq.aliyun.com/articles/580962](https://yq.aliyun.com/articles/580962)
