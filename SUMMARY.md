@@ -11,6 +11,7 @@
 * [zookeeper分布式锁最完美实现Curator剖析](zookeeperfen-bu-shi-suo-zui-wan-mei-shi-xian-curator-pou-xi.md)
 * [优质技术博客导航](you-zhi-ji-zhu-bo-ke-dao-hang.md)
 * [写作计划](you-zhi-ji-zhu-bo-ke-dao-hang/xie-zuo-ji-hua.md)
+* [设计工具](she-ji-gong-ju.md)
 
 ## java并发包
 
