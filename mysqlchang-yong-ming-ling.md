@@ -46,7 +46,7 @@ set password for 'root'@'localhost' = password('123');
 ```
 UPDATE mysql.user SET Password=PASSWORD('新密码') where USER='root';
 flush privileges;
-exit
+exit;
 ```
 
 * 编辑/etc/my.cnf配置文件,注释掉skip-grant-tables，重启mysql服务
