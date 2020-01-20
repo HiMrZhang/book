@@ -15,7 +15,7 @@ mysql -u root -p < C:\backup.sql
 ## 创建用户
 
 ```
-CREATE USER 'test'@'localhost' IDENTIFIED BY 'test1234'; 
+CREATE USER 'test'@'localhost' IDENTIFIED BY 'test1234';
 ```
 
 ## 授权
@@ -33,7 +33,7 @@ SELECT User, Host, Password FROM mysql.user;
 ## 修改密码
 
 ```
-set password for 'root'@'localhost' = password('123'); 
+set password for 'root'@'localhost' = password('123');
 ```
 
 ## 忘记root密码
@@ -50,6 +50,12 @@ exit
 ```
 
 * 编辑/etc/my.cnf配置文件,注释掉skip-grant-tables，重启mysql服务
+
+## 查看空闲连接
+
+```
+show processlist;
+```
 
 
 
