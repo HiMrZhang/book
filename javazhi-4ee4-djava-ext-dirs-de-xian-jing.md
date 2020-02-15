@@ -1,4 +1,4 @@
-Java指令-Djava.ext.dirs的陷阱
+# Java指令-Djava.ext.dirs的陷阱
 
 这两天由于现场需求，需要把ES索引写入插件改造成带安全认证的方式，加密算法是由java.security相关类实现的。在DEMO中测试了若干次都没问题，但是放到生成环境中就是报NoSuchAlgorithmException的错误，相关错误如下：
 
@@ -7,6 +7,8 @@ Java指令-Djava.ext.dirs的陷阱
 OK问题分析到这儿，什么原因已经很明朗，解决方案也很简单，只需在改路径后面补上ext的路径即可！比如：
 
 -Djava.ext.dirs=./plugin:$JAVA\\_HOME/jre/lib/ext。windows环境下运行程序，应该用分号替代冒号来分隔。
+
+
 
 版权声明：本文为CSDN博主「cyony」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 
