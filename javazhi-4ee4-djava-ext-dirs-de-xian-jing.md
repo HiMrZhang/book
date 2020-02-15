@@ -8,11 +8,7 @@
 
        -Djava.ext.dirs=./plugin:$JAVA\_HOME/jre/lib/ext。windows环境下运行程序，应该用分号替代冒号来分隔。
 
-————————————————
-
 版权声明：本文为CSDN博主「cyony」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 
 原文链接：https://blog.csdn.net/cyony/article/details/74375251
-
-
 
