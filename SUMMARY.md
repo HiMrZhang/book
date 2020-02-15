@@ -28,3 +28,7 @@
 
 * [feign源码剖析](yuan-ma-pou-xi/feignyuan-ma-pou-xi.md)
 
+## 陷阱
+
+* [Java指令-Djava.ext.dirs的陷阱](javazhi-4ee4-djava-ext-dirs-de-xian-jing.md)
+
