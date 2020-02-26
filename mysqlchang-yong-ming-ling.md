@@ -67,8 +67,16 @@ select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx
 
 # 查看事物隔离级别
 
+5.6以后版本:
+
 ```
 show variables like 'transaction_isolation';
+```
+
+5.6之前版本:
+
+```
+show variables like 'tx_isolation';
 ```
 
 
