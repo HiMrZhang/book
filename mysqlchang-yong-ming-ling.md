@@ -57,5 +57,13 @@ exit;
 show processlist;
 ```
 
+# 查询长事务
+
+eg:查找持续时间超过 60s 的事务
+
+```
+select * from information_schema.innodb_trx where TIME_TO_SEC(timediff(now(),trx_started))>60
+```
+
 
 
