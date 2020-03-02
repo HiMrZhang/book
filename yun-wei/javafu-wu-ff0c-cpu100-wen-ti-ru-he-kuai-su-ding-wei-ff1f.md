@@ -1,7 +1,5 @@
 # Java服务，CPU100%问题如何快速定位？
 
-
-
 假设，服务器上部署了若干Java站点服务，以及若干Java微服务，突然收到运维的CPU异常告警。如何定位是哪个服务进程导致CPU过载，哪个线程导致CPU过载，哪段代码导致CPU过载？
 
 简要步骤如下：
@@ -79,4 +77,6 @@ top -Hp 10765 ，显示一个进程的线程运行信息列表
 最后，根据堆栈里的信息，找到对应的代码，搞定！
 
 希望对经常进行线上CPU问题排查的同学有帮助，如果有更好的实践，也欢迎分享。
+
+原文链接:[https://mp.weixin.qq.com/s/YGW7eJZVEHJaJqOlK3gMUg](https://mp.weixin.qq.com/s/YGW7eJZVEHJaJqOlK3gMUg)
 
