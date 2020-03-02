@@ -35,4 +35,5 @@
 ## 运维
 
 * [Java服务，CPU100%问题如何快速定位？](yun-wei/javafu-wu-ff0c-cpu100-wen-ti-ru-he-kuai-su-ding-wei-ff1f.md)
+* [Java服务，内存OOM问题如何快速定位？](yun-wei/javafu-wu-ff0c-nei-cun-oom-wen-ti-ru-he-kuai-su-ding-wei-ff1f.md)
 
