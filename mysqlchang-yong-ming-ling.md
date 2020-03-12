@@ -79,5 +79,17 @@ show variables like 'transaction_isolation';
 show variables like 'tx_isolation';
 ```
 
+## 查询索引状态
+
+```
+show INDEX FROM t_user;
+```
+
+## 查询表状态
+
+```
+show table status like 'user';
+```
+
 
 
