@@ -38,6 +38,8 @@ Spring boot starter data-redis与jedis关系：[https://www.jianshu.com/p/c7b4cd
 
 Redis面试连环问，快看看你能走到哪一步！：[https://mp.weixin.qq.com/s/\_MbttNhuHW6wMmcoLokbJQ](https://mp.weixin.qq.com/s/_MbttNhuHW6wMmcoLokbJQ)
 
+Redis性能问题排查解决手册:[https://www.cnblogs.com/mushroom/p/4738170.html](https://www.cnblogs.com/mushroom/p/4738170.html)
+
 ## jvm
 
 java内存模型：[https://blog.csdn.net/aichuanwendang/article/details/84589712](https://blog.csdn.net/aichuanwendang/article/details/84589712)
