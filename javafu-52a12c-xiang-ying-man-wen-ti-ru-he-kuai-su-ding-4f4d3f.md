@@ -92,5 +92,11 @@ public void call(){
 }
 ```
 
+日志效果
+
+```
+2020-05-06 16:41:21.033  [http-nio-8081-exec-1] DEBUG c.e.aspect.ExecuteTimeAspect -execute method call of com.easysoft.Test use time 134ms
+```
+
 
 
