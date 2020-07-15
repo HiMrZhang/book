@@ -13,6 +13,7 @@
 * [写作计划](you-zhi-ji-zhu-bo-ke-dao-hang/xie-zuo-ji-hua.md)
 * [设计工具](she-ji-gong-ju.md)
 * [java服务,响应慢问题如何定位?](javafu-52a12c-xiang-ying-man-wen-ti-ru-he-kuai-su-ding-4f4d3f.md)
+* [书单](shu-dan.md)
 
 ## java并发包
 
