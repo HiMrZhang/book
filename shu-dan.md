@@ -1,6 +1,7 @@
 ## 书单
 
 * 《Effective Java 中文版》
+* 《Head First 设计模式》
 * 《鸟哥的Linux私房菜 （基础学习篇）》
 * 《鸟哥的Linux私房菜 （服务器架设篇）》
 * 《Zabbix企业级分布式监控系统》
