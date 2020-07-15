@@ -3,6 +3,7 @@
 * 《Effective Java 中文版》
 * 《Kubernetes权威指南》
 * 《Kubernetes权威指南——企业级容器云实战》
+* 《Kubernetes实战》
 * 《Head First 设计模式》
 * 《Go语言编程》
 * 《鸟哥的Linux私房菜 （基础学习篇）》
@@ -11,6 +12,7 @@
 * 《领域驱动设计》
 
 * 《火球:UML大战需求分析》
+
 * 《用Mesos框架构建分布式应用》
 * 《亿级流量网站架构核心技术》
 * 《Java性能权威指南》
