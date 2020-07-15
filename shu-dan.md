@@ -22,5 +22,7 @@
 * 《RabbitMQ实战指南》
 * 《Apache Kafka源码剖析》
 
+更多:[http://www.iocoder.cn/Architecture/books-recommended/](http://www.iocoder.cn/Architecture/books-recommended/)
+
 
 
