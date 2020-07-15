@@ -10,6 +10,7 @@
 * 《Redis开发与运维》
 * 《Redis设计与实现》
 * 《ELK Stack权威指南》
+* 《RabbitMQ实战指南》
 
 
 
